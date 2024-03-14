@@ -13,7 +13,7 @@ function App() {
     <div className="App">
     <Navbar/>
 
-    {/* Quand je vais sur cette route, ça renvoie telle page-compo  */}
+    {/* Quand je vais sur cette route/URL, ça renvoie telle page-compo  */}
     <Routes> 
       <Route path="/" element={<Homepage/>}/>
       <Route path="/projects" element={<ProjectListPage/>}/>

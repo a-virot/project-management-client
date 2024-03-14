@@ -10,7 +10,7 @@ function AddProject(props){
     const handleSubmit =(e)=>{
         e.preventDefault();
 
-        const requestBody={title,description}
+        const requestBody={title, description}
 
         axios
         .post(`${API_URL}/api/projects`,requestBody)

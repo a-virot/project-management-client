@@ -1,7 +1,6 @@
 import { useState } from "react";
 import axios from "axios";
 
-
 const API_URL = "http://localhost:5005";
 
 function AddTask(props){
@@ -11,7 +10,7 @@ function AddTask(props){
     const handleSubmit = (e)=>{
         e.preventDefault();
 
-        const {projectId,refreshProject} = props;
+        const {projectId, refreshProject} = props;
         // An object representing the body of the POST request
         const newTaskRequestBody = {title, description, projectId};
         

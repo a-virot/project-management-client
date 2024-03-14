@@ -12,8 +12,8 @@ function EditProjectPage(){
     const {projectId} = useParams();
     const navigate = useNavigate();
     
- // Runs after initial render and each time project's id
- //  `projectId`, coming from URL parameter, changes
+ // useEffect runs after initial render and each time project's id
+ // `projectId`, coming from URL parameter, changes
 
  useEffect(()=>{
     axios
@@ -34,8 +34,7 @@ function EditProjectPage(){
      axios
      .put(`${API_URL}/api/projects/${projectId}`, requestBody)
      .then((response)=>{
-       navigate(`/projects/${projectId}`)
-        // back to the details page
+       navigate(`/projects/${projectId}`) // back to the details page
      });
  };
 
