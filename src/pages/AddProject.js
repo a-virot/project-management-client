@@ -25,7 +25,7 @@ function AddProject(props){
 
     return(
         <div className="AddProject">
-            <h3>AddProject</h3>
+            <h3>Add a Project</h3>
 
             <form onSubmit={handleSubmit}>
                 <label>Title :</label>

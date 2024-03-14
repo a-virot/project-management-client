@@ -14,8 +14,12 @@ code {
 
 /* index.css */
 
+
+
+
 body {
   margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 a {
@@ -30,6 +34,25 @@ select {
   margin: 5px;
   font-size: 18px;
 }
+
+textarea{
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+button{
+  background-color: rgb(154, 228, 203);
+  border-radius: 6px;
+  border-width: 1px;
+  border-color: gray;
+  box-shadow: 0px 1px 2px gray;
+  
+}
+button:hover{
+  background-color: darkslategrey;
+  color: white;
+  cursor: pointer;
+}
+
 
 label {
   width: 200px;
@@ -67,19 +90,20 @@ textarea {
   box-shadow: 0px 2px 3px grey;
   margin: 0 auto;
   margin-bottom: 20px;
-  background: #94a7c8;
+  background-color: aquamarine;
+  /* background: #0d0565; */
   border-radius: 4px;
 }
 
 .ProjectCard h3::after {
-  content: url("https://education-team-2020.s3.eu-west-1.amazonaws.com/web-dev/m3/icon-expand.png");
+ 
   margin-left: 5px;
 }
 
 .EditProjectPage,
 .AddProject,
 .AddTask {
-  background: #f9eec3;
+  background: rgb(194, 239, 224);
   border: 1px solid grey;
   box-shadow: 0px 2px 3px grey;
   width: 400px;
@@ -108,5 +132,8 @@ textarea {
 }
 
 .TaskCard {
-  background-color: #dfeef9;
+  background-color:#c6f6ec;
+  /* background-color: #dfeef9; */
 }
+
+

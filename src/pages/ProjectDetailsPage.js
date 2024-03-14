@@ -39,7 +39,7 @@ function ProjectDetailsPage(){
             )}
 
             {project && project.tasks.map((task)=>(
-                <TaskCard key={task._id} {...task}/>
+                <TaskCard key={task._id} {...task} projectTitle={project.title}/>
             ))}
             
             {/* 

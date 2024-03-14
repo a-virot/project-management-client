@@ -1,13 +1,14 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
-import { useParams, useNavigate } from "react-router-dom";
+import { useParams, useNavigate, Link} from "react-router-dom";
 
 const API_URL = "http://localhost:5005";
 
-function EditTaskPage() {
+function EditTaskPage(props) {
     const [title, setTitle] = useState("");
     const [description, setDescription]=useState("");
     const [projectId, setProjectId]=useState("");
+    // const [project, setProject]= useState("");
     
     const {taskId} = useParams();
     const navigate = useNavigate();
@@ -24,6 +25,17 @@ function EditTaskPage() {
       .catch((error)=> console.log(error))
     },[taskId])
 
+  
+
+  //   const getProject = ()=> {
+  //     axios
+  //     .get(`${API_URL}/api/projects/${projectId}`)
+  //     .then((response)=>{
+  //         const oneProject = response.data
+  //         setProject(oneProject);
+  //     })
+  //     .catch((error)=> console.log(error));
+  // };
 
     const handleFormSubmit= (e)=>{
         e.preventDefault();
@@ -53,6 +65,7 @@ function EditTaskPage() {
   return (
     <div className="AddTask">
     <h3>Edit the Task</h3>
+    {/* <h2>{project.title}</h2> */}
 
     <form onSubmit={handleFormSubmit}>
         <label>Title :</label>
@@ -74,7 +87,10 @@ function EditTaskPage() {
         <button type="submit">Update Task</button>
     </form>
 
-    <button oncClick={deleteTask}>Delete Task</button>
+    <button onClick={deleteTask}>Delete Task</button>
+    <Link to={`/projects/${projectId}`}>
+      <button>Back to project</button>
+    </Link>
 
 
     </div>
