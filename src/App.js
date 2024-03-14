@@ -1,23 +1,27 @@
-import logo from './logo.svg';
 import './App.css';
+import { Route, Routes } from 'react-router-dom';
+
+import Navbar from "./components/Navbar";
+import Homepage from './pages/HomePage';
+import ProjectListPage from './pages/ProjectListPage';
+import ProjectDetailsPage from './pages/ProjectDetailsPage';
+import EditProjectPage from './pages/EditProjectPage';
+import EditTaskPage from './pages/EditTaskPage';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <Navbar/>
+
+    {/* Quand je vais sur cette route, ça renvoie telle page-compo  */}
+    <Routes> 
+      <Route path="/" element={<Homepage/>}/>
+      <Route path="/projects" element={<ProjectListPage/>}/>
+      <Route path="/projects/:projectId" element={<ProjectDetailsPage/>}/>
+      <Route path="/projects/edit/:projectId" element={<EditProjectPage/>}/>
+      <Route path="/task/edit/:taskId" element={<EditTaskPage/>}/>
+    </Routes>
+      
     </div>
   );
 }
