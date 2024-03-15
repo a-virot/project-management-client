@@ -1,6 +1,7 @@
 import axios from "axios";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import { useParams, useNavigate, Link} from "react-router-dom";
+import { ThemeContext } from "../context/theme.context";
 
 const API_URL = "http://localhost:5005";
 
@@ -8,6 +9,7 @@ function EditTaskPage(props) {
     const [title, setTitle] = useState("");
     const [description, setDescription]=useState("");
     const [projectId, setProjectId]=useState("");
+    const {theme} = useContext(ThemeContext);
     // const [project, setProject]= useState("");
     
     const {taskId} = useParams();
@@ -63,7 +65,7 @@ function EditTaskPage(props) {
 
 
   return (
-    <div className="AddTask">
+    <div className={"AddTask "+ theme}>
     <h3>Edit the Task</h3>
     {/* <h2>{project.title}</h2> */}
 

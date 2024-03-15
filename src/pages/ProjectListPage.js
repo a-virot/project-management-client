@@ -1,14 +1,15 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext  } from "react";
 import axios from "axios";
 //import { Link } from "react-router-dom";
-
 import AddProject from "./AddProject";
 import ProjectCard from "../components/ProjectCard";
+import { ThemeContext } from "../context/theme.context";
 
 const API_URL="http://localhost:5005";  // We capitalized the name of the variable to signal that this value is a constant and will remain unchanged 
 
 function ProjectListPage(){
     const [projects, setProjects] = useState([]);
+    const {theme} = useContext(ThemeContext);
 
     // SERVER SIDE : project.routes.js (prefixed with /api in app.js): http://localhost:5005/api/projects
     // router.get("/projects", (req, res, next) => { Project.find()
@@ -24,7 +25,7 @@ function ProjectListPage(){
     }, []);
 
     return(
-        <div className="ProjectListPage">
+        <div className={"ProjectListPage "+ theme} >
 
         <AddProject refreshProjects={getAllProjects}/>
 

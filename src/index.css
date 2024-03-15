@@ -68,8 +68,8 @@ textarea {
 }
 
 .Navbar {
-  background: #515f7d;
-  color: white;
+  /* background: #515f7d; */
+  /* color: white; */
   padding: 0px 20px;
   box-shadow: 0px 1px 2px gray;
   width: 100%;
@@ -77,12 +77,46 @@ textarea {
   padding: 5px;
 }
 
-.Navbar li {
+.light {
+  background-color: #efeded;
+}
+ 
+.dark {
+  background-color: #18191a;
+}
+ 
+.Navbar.light {
+  background-color: #ffffff;
+}
+ 
+.Navbar.dark {
+  background-color: #252526;
+}
+
+.profile{
+  width: 200px;
+}
+ 
+.light a,
+.light p,
+.light h1,
+.light h3 {
+  color: #000000;
+}
+ 
+.dark a,
+.dark p,
+.dark h1,
+.dark h3 {
+  color: #ffffff;
+}
+
+/* .Navbar li {
   list-style: none;
   color: white;
   font-size: 24px;
   font-weight: 600;
-}
+} */
 
 .card {
   width: 400px;

@@ -1,11 +1,13 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
 import axios from "axios";
+import { ThemeContext } from "../context/theme.context";
 
 const API_URL = "http://localhost:5005";
 
 function AddProject(props){
     const [title, setTitle] = useState("");
     const [description, setDescription] = useState("");
+    const {theme} =useContext(ThemeContext);
 
     const handleSubmit =(e)=>{
         e.preventDefault();
@@ -24,7 +26,7 @@ function AddProject(props){
     };
 
     return(
-        <div className="AddProject">
+        <div className={"AddProject "+ theme}>
             <h3>Add a Project</h3>
 
             <form onSubmit={handleSubmit}>

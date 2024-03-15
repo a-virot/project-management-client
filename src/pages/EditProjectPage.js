@@ -1,17 +1,17 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import axios from "axios";
 import { useParams, useNavigate } from "react-router-dom";
+import { ThemeContext } from "../context/theme.context";
 
 const API_URL = "http://localhost:5005";
 
 function EditProjectPage(){
     const [title, setTitle]= useState("");
     const [description, setDescription]= useState("");
-
      // To get the URL parameter `:projectId` 
     const {projectId} = useParams();
     const navigate = useNavigate();
-    
+    const {theme} = useContext(ThemeContext);
  // useEffect runs after initial render and each time project's id
  // `projectId`, coming from URL parameter, changes
 
@@ -48,7 +48,7 @@ function EditProjectPage(){
  };
  
     return(
-        <div className="EditProjectPage">
+        <div className={"EditProjectPage "+ theme}>
             <h3>Edit the Project</h3>
 
             <form onSubmit={handleFormSubmit}>
